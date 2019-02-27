@@ -1,0 +1,15 @@
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.csprojAssemblyReference.cache
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\MainWindow.g.cs
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\App.g.cs
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice_MarkupCompile.cache
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice_MarkupCompile.lref
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\bin\Debug\Calculatrice.exe.config
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\bin\Debug\Calculatrice.exe
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\bin\Debug\Calculatrice.pdb
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\MainWindow.baml
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.g.resources
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.Properties.Resources.resources
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.exe
+C:\Users\Dell\Documents\Exos\WPF\Calculatrice\Calculatrice\Calculatrice\obj\Debug\Calculatrice.pdb
