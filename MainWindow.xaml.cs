@@ -30,31 +30,29 @@ namespace Calculatrice
         public MainWindow()
         {
             InitializeComponent();
-
             //Assign to the decimal button the separator from the current culture
             //dec.Content = separator;
         }
-
-        //List the possible numeric operations
+        //Déclaration d'une liste d'opérations numériques possibles
         private enum Operations
         {
-        None,
-        Division,
-        Multiplication,
-        Subtraction,
-        Sum
+        None, // Rien
+        Division, // Diviser
+        Multiplication, // Multiplier
+        Subtraction, // Soustraire
+        Sum // Additionner
         }
         //Gestion des boutons
-        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        private void Number_Button(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
 
             if (calculation) //Si le calcul est déj effectué
             {
-                result.Content = $"{button.Content}";
+                result.Content = $"{button.Content}"; // Récupération de la valeur entrée par l'utilisateur
                 calculation = false;
             }
-            else // Calucl non effectué
+            else // Calcul non effectué
             {
                 if (result.Content.ToString() == "0")
                 {
@@ -65,32 +63,17 @@ namespace Calculatrice
                     result.Content = $"{result.Content}{button.Content}";
                 }
             }
-
         }
-
         //Gestion des Opérations
-        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        private void Operation(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-
             //Cas selon le boutton choisi 
             switch (button.Content.ToString()) // Conversion de la valeur du boutton en chaîne de caractères
             {
-                case "Reset": // Réinitiliaser la calcultrice
+                case "Reset": // Réinitialiser la calcultrice
                     result.Content = "0";
                     break;
-                //case "+/-":
-                //    if (!(result.Content.ToString() == "0"))
-                //    {
-                //        result.Content = Convert.ToDouble(result.Content) * -1;
-                //    }
-                //    break;
-                //case "%":
-                //    if (!(result.Content.ToString() == "0"))
-                //    {
-                //        result.Content = Convert.ToDouble(result.Content) / 100;
-                //    }
-                //    break;
                 case "/": // Cas de la division
                     firstNumber = Convert.ToDouble(result.Content);
                     operation = Operations.Division;
@@ -112,9 +95,9 @@ namespace Calculatrice
                     result.Content = "0";
                     break;
                 case "=":
-                    switch (operation)
+                    switch (operation) // Cas des opérations
                     {
-                        case Operations.Division:
+                        case Operations.Division: // Division
                             if (calculation)
                             {
                                 if (!(result.Content.ToString() == "ERROR"))
@@ -124,7 +107,7 @@ namespace Calculatrice
                             }
                             else
                             {
-                                //Check if division by 0
+                                // Cas de la dividion par 0 !!!
                                 if (result.Content.ToString() == "0")
                                 {
                                     result.Content = "ERROR";
@@ -139,7 +122,7 @@ namespace Calculatrice
                                 }
                             }
                             break;
-                        case Operations.Multiplication:
+                        case Operations.Multiplication: // Multiplication
                             if (calculation)
                             {
                                 result.Content = Convert.ToDouble(result.Content) * secondNumber;
@@ -152,7 +135,7 @@ namespace Calculatrice
                                 calculation = true;
                             }
                             break;
-                        case Operations.Subtraction:
+                        case Operations.Subtraction: // Soustraction
                             if (calculation)
                             {
                                 result.Content = Convert.ToDouble(result.Content) - secondNumber;
@@ -165,7 +148,7 @@ namespace Calculatrice
                                 calculation = true;
                             }
                             break;
-                        case Operations.Sum:
+                        case Operations.Sum: // Addition
                             if (calculation)
                             {
                                 result.Content = Convert.ToDouble(result.Content) + secondNumber;
@@ -173,7 +156,7 @@ namespace Calculatrice
                             else
                             {
                                 secondNumber = Convert.ToDouble(result.Content);
-                                MessageBox.Show($"{firstNumber} + {secondNumber}");
+                                //MessageBox.Show($"{firstNumber} + {secondNumber}");
                                 resultNumber = firstNumber + secondNumber;
                                 result.Content = resultNumber;
                                 calculation = true;

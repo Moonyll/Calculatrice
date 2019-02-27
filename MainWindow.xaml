@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:Calculatrice"
         mc:Ignorable="d"
         Title="Calculatrice" Height="400" Width="300">
-      <Grid Margin="8">
+       <Grid Margin="8">
+        <!--Définition des colonnes-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <!--Définition des lignes-->
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
             <RowDefinition/>
@@ -21,22 +23,24 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="result" Content="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="50" Background="#E1D0E3"/>
-        <Button Content="Reset" Margin="2" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" FontWeight="bold" Background="#FD5B69" Click="OperationButton_Click"/>
-        <Button Content="/" Margin="2" Grid.Column="2" Grid.Row="1" FontWeight="bold" Background="#9BF5CC" Click="OperationButton_Click"/>
-        <Button Content="*" Margin="2" Grid.Column="3" Grid.Row="1" FontWeight="bold" Background="#9BF5CC" Click="OperationButton_Click"/>
-        <Button Content="7" Margin="2" Grid.Column="0" Grid.Row="2" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="8" Margin="2" Grid.Column="1" Grid.Row="2" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="9" Margin="2" Grid.Column="2" Grid.Row="2" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="-" Margin="2" Grid.Column="3" Grid.Row="2" FontWeight="bold" Background="#9BF5CC" Click="OperationButton_Click"/>
-        <Button Content="4" Margin="2" Grid.Column="0" Grid.Row="3" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="5" Margin="2" Grid.Column="1" Grid.Row="3" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="6" Margin="2" Grid.Column="2" Grid.Row="3" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="+" Margin="2" Grid.Column="3" Grid.Row="3" FontWeight="bold" Background="#9BF5CC" Click="OperationButton_Click"/>
-        <Button Content="1" Margin="2" Grid.Column="0" Grid.Row="4" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="2" Margin="2" Grid.Column="1" Grid.Row="4" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="3" Margin="2" Grid.Column="2" Grid.Row="4" FontSize="20" Background="#B0F4F7" Click="NumberButton_Click"/>
-        <Button Content="0" Margin="2" Grid.Column="0" Grid.Row="5" FontSize="20" Background="#B0F4F7" Grid.ColumnSpan="3" Click="NumberButton_Click"/>
-        <Button Content="=" Margin="2,3,2,2" Grid.Column="3" Grid.Row="4" FontWeight="bold" Background="#F7F5C2" Click="OperationButton_Click" Grid.RowSpan="2"/>
+        <!--Fenêtre de résultat-->
+        <Label x:Name="result" Content="0" Grid.ColumnSpan="4" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" FontSize="50" Background="#E1D0E3" Width="auto"/>
+        <!--Définition des bouttons-->
+        <Button Content="Reset" Margin="2" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" FontWeight="bold" Background="#FD5B69" HorizontalContentAlignment="Center" Click="Operation"/>
+        <Button Content="/" Margin="2" Grid.Column="2" Grid.Row="1" FontWeight="bold" FontSize="30" Background="#9BF5CC" Click="Operation"/>
+        <Button Content="*" Margin="2" Grid.Column="3" Grid.Row="1" FontWeight="bold" FontSize="30" Background="#9BF5CC" Click="Operation"/>
+        <Button Content="7" Margin="2" Grid.Column="0" Grid.Row="2" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="8" Margin="2" Grid.Column="1" Grid.Row="2" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="9" Margin="2" Grid.Column="2" Grid.Row="2" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="-" Margin="2" Grid.Column="3" Grid.Row="2" FontWeight="bold" FontSize="30" Background="#9BF5CC" Click="Operation"/>
+        <Button Content="4" Margin="2" Grid.Column="0" Grid.Row="3" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="5" Margin="2" Grid.Column="1" Grid.Row="3" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="6" Margin="2" Grid.Column="2" Grid.Row="3" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="+" Margin="2" Grid.Column="3" Grid.Row="3" FontWeight="bold" FontSize="30" Background="#9BF5CC" Click="Operation"/>
+        <Button Content="1" Margin="2" Grid.Column="0" Grid.Row="4" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="2" Margin="2" Grid.Column="1" Grid.Row="4" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="3" Margin="2" Grid.Column="2" Grid.Row="4" FontWeight="bold" FontSize="20" Background="#B0F4F7" Click="Number_Button"/>
+        <Button Content="0" Margin="2" Grid.Column="0" Grid.Row="5" FontWeight="bold" FontSize="20" Background="#B0F4F7" Grid.ColumnSpan="3" Click="Number_Button"/>
+        <Button Content="="  Grid.Column="3" Grid.Row="4"  Grid.RowSpan="2" FontWeight="bold" FontSize="30" Background="#F7F5C2" Click="Operation"/>
     </Grid>
 </Window>
