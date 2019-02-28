@@ -23,15 +23,15 @@ namespace Calculatrice
     {
         // Déclaration des variables
         double firstNumber, secondNumber, resultNumber = 0;
-        bool calculation = false;
+        bool calculation = false; // Valeur booléenne pour déclencher le calcul ou non dans le switch case "="
         Operations operation = Operations.None;
         string separator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator; // Séparateur pour les nombres décimaux
         //
         public MainWindow()
         {
-            InitializeComponent();
-            //Assign to the decimal button the separator from the current culture
-            //dec.Content = separator;
+        InitializeComponent();
+        //Assign to the decimal button the separator from the current culture
+        //dec.Content = separator;
         }
         //Déclaration d'une liste d'opérations numériques possibles
         private enum Operations
@@ -42,32 +42,32 @@ namespace Calculatrice
         Subtraction, // Soustraire
         Sum // Additionner
         }
-        //Gestion des boutons
+        //Gestion des boutons pour les entrées chiffres
         private void Number_Button(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
+            Button button = (Button)sender; // L'objet sender prend la valeur classe boutton de type chiffre
 
-            if (calculation) //Si le calcul est déj effectué
+            if (calculation) // Condition false
             {
-                result.Content = $"{button.Content}"; // Récupération de la valeur entrée par l'utilisateur
-                calculation = false;
+            result.Content = $"{button.Content}"; // Récupération de la valeur entrée par l'utilisateur
+            calculation = false;
             }
-            else // Calcul non effectué
+            else // Condition true
             {
                 if (result.Content.ToString() == "0")
                 {
-                    result.Content = $"{button.Content}";
+                result.Content = $"{button.Content}";
                 }
                 else
                 {
-                    result.Content = $"{result.Content}{button.Content}";
+                result.Content = $"{result.Content}{button.Content}"; // Concaténation pour un nombre a plusieurs chiffres
                 }
             }
         }
-        //Gestion des Opérations
-        private void Operation(object sender, RoutedEventArgs e)
+        //Gestion des boutons pour les opérations
+        private void Operation(object sender, RoutedEventArgs e) 
         {
-            Button button = (Button)sender;
+            Button button = (Button)sender; // L'objet sender prend la valeur classe boutton de type opération
             //Cas selon le boutton choisi 
             switch (button.Content.ToString()) // Conversion de la valeur du boutton en chaîne de caractères
             {
@@ -100,9 +100,9 @@ namespace Calculatrice
                         case Operations.Division: // Division
                             if (calculation)
                             {
-                                if (!(result.Content.ToString() == "ERROR"))
+                                if (!(result.Content.ToString() == "Erreur, division par zéro impossible"))
                                 {
-                                    result.Content = Convert.ToDouble(result.Content) / secondNumber;
+                                result.Content = Convert.ToDouble(result.Content) / secondNumber;
                                 }
                             }
                             else
@@ -110,56 +110,56 @@ namespace Calculatrice
                                 // Cas de la dividion par 0 !!!
                                 if (result.Content.ToString() == "0")
                                 {
-                                    result.Content = "ERROR";
-                                    calculation = true;
+                                result.Content = "Erreur, division par zéro impossible"; // Affichage message d'erreur
+                                calculation = true; // Arrêt du calcul
                                 }
                                 else
                                 {
-                                    secondNumber = Convert.ToDouble(result.Content);
-                                    resultNumber = firstNumber / secondNumber;
-                                    result.Content = resultNumber;
-                                    calculation = true;
+                                secondNumber = Convert.ToDouble(result.Content); // Mémorisation second chiffre
+                                resultNumber = firstNumber / secondNumber; // Opération effectuée
+                                result.Content = resultNumber; // Résultat
+                                calculation = true; // Arrêt du calcul
                                 }
                             }
                             break;
                         case Operations.Multiplication: // Multiplication
                             if (calculation)
                             {
-                                result.Content = Convert.ToDouble(result.Content) * secondNumber;
+                            result.Content = Convert.ToDouble(result.Content) * secondNumber;
                             }
                             else
                             {
-                                secondNumber = Convert.ToDouble(result.Content);
-                                resultNumber = firstNumber * secondNumber;
-                                result.Content = resultNumber;
-                                calculation = true;
+                            secondNumber = Convert.ToDouble(result.Content); // Mémorisation second chiffre
+                            resultNumber = firstNumber * secondNumber; // Opération effectuée
+                            result.Content = resultNumber; // Résultat
+                            calculation = true; // Arrêt du calcul
                             }
                             break;
                         case Operations.Subtraction: // Soustraction
                             if (calculation)
                             {
-                                result.Content = Convert.ToDouble(result.Content) - secondNumber;
+                            result.Content = Convert.ToDouble(result.Content) - secondNumber;
                             }
                             else
                             {
-                                secondNumber = Convert.ToDouble(result.Content);
-                                resultNumber = firstNumber - secondNumber;
-                                result.Content = resultNumber;
-                                calculation = true;
+                            secondNumber = Convert.ToDouble(result.Content); // Mémorisation second chiffre
+                            resultNumber = firstNumber - secondNumber; // Opération effectuée
+                            result.Content = resultNumber; // Résultat
+                            calculation = true; // Arrêt du calcul
                             }
                             break;
                         case Operations.Sum: // Addition
                             if (calculation)
                             {
-                                result.Content = Convert.ToDouble(result.Content) + secondNumber;
+                            result.Content = Convert.ToDouble(result.Content) + secondNumber;
                             }
                             else
                             {
-                                secondNumber = Convert.ToDouble(result.Content);
-                                //MessageBox.Show($"{firstNumber} + {secondNumber}");
-                                resultNumber = firstNumber + secondNumber;
-                                result.Content = resultNumber;
-                                calculation = true;
+                            secondNumber = Convert.ToDouble(result.Content); // Mémorisation second chiffre
+                            //MessageBox.Show($"{firstNumber} + {secondNumber}");
+                            resultNumber = firstNumber + secondNumber; // Opération effectuée
+                            result.Content = resultNumber; // Résultat
+                            calculation = true; // Arrêt du calcul
                             }
                             break;
                     }
@@ -167,7 +167,7 @@ namespace Calculatrice
                 default:
                     if (!result.Content.ToString().Contains(separator))
                     {
-                        result.Content = $"{result.Content}{button.Content}";
+                    result.Content = $"{result.Content}{button.Content}";
                     }
                     break;
             }
